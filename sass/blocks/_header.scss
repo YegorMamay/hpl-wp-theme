@@ -1,0 +1,150 @@
+.header {
+  padding: 15px 0;
+  font-size: 14px;
+  line-height: 1.3;
+  font-weight: 600;
+  color: #333;
+
+  &-details {
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 180px;
+    padding: 15px;
+
+    &.is-left {
+      border-left: 4px solid $themeColorTwo;
+    }
+
+    &.is-right {
+      border-right: 4px solid $themeColorTwo;
+    }
+  }
+
+  &-abet {
+    float: right;
+    margin-left: 20px;
+      margin-top: 15px;
+  }
+}
+
+.logo {
+  &-link {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 20px;
+  }
+}
+
+.hero {
+  padding: 3% 0 5%;
+  color: #333;
+  font-size: 20px;
+  font-weight: 600;
+
+  &-headline {
+    @include responsive-font-size(24px, 45px, 480px, 1200px, 34px);
+    margin-bottom: 20px;
+  }
+
+  &-desc {
+    margin-bottom: 30px;
+  }
+
+  &-column {
+    background: #000 none no-repeat center center;
+    padding-top: 36%;
+    margin-bottom: 20px;
+    @include background-size(cover);
+    @include transition(.2s ease-out);
+
+    &:hover {
+      @include box-shadow(0 10px 20px rgba(#000, .2));
+    }
+  }
+
+  &-details {
+    padding: 20px 40px 30px;
+    background-color: rgba(#000, .4);
+    color: #fff;
+
+    h3 {
+      color: #fff;
+      @include responsive-font-size(18px, 25px, 480px, 1200px, 20px);
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.3;
+      margin-bottom: 15px;
+    }
+  }
+
+  .button-medium {
+    background-color: #333;
+
+    &:hover {
+      background-color: #177ec2;
+    }
+  }
+}
+
+@media only screen and (max-width: 980px) {
+  .header {
+    padding: 10px 0;
+
+    &-details {
+      display: block;
+      max-width: none;
+      margin-top: 10px;
+      padding: 10px;
+    }
+
+    &-abet {
+      float: none;
+      margin-left: 0;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .hero {
+    &-column {
+      text-align: center;
+    }
+  }
+}
+
+@media only screen and (max-width: 545px) {
+  .header {
+    padding-top: 75px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+
+    &,
+    .text-right {
+      text-align: center;
+    }
+
+    &-details {
+      margin: 15px 0;
+      padding: 0;
+
+      &.is-left,
+      &.is-right {
+        border: 0;
+      }
+
+      &.is-left {
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 10px;
+      }
+    }
+  }
+
+  .hero {
+    &-details {
+      padding: 15px;
+    }
+  }
+}

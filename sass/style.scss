@@ -1,0 +1,233 @@
+/*
+Theme Name: HPL-v1.1
+Theme URI:
+Text Domain: brainworks
+Author: Yegor Mamay
+Author URI: http://brainworks.com.ua
+Description:
+License:
+License URI:
+Version: 23.03.2019
+Tags: one-column, two-columns, full-width-template, e-commerce
+*/
+/* CORE */
+@import "core/reset";
+@import "core/mediaqueries";
+@import "core/variables";
+@import "core/mixins";
+@import "core/colors";
+@import "core/fonts";
+@import "core/wp-core";
+@import "core/help-style";
+//@import "core/theme-style";
+/* PLUG-INs */
+@import "plugins/font-awesome";
+//@import "plugins/plug-ins";
+@import "plugins/animations";
+/* BOOTSTRAP */
+//@import "bootstrap/bootstrap-tables";
+@import "bootstrap/bootstrap-grid";
+/* PAGES */
+@import "pages/single-post";
+@import "pages/blog-page";
+//@import "pages/woo";
+/* ELEMENTS */
+@import "elements/typography";
+@import "elements/responsive-titles";
+@import "elements/scroll-top";
+@import "elements/forms";
+@import "elements/buttons";
+//@import "elements/buttons-2";
+//@import "elements/images";
+@import "elements/links";
+@import "elements/pagination";
+@import "elements/bootstrap-embded";
+@import "elements/tables";
+@import "elements/lists";
+@import "elements/empty-space";
+@import "elements/dividers";
+//@import "elements/other";
+//@import "elements/icons";
+/* BLOCKS */
+@import "blocks/header";
+@import "blocks/footer";
+@import "blocks/menu";
+@import "blocks/sidebar";
+@import "blocks/menu-second";
+
+html {
+  height: 100%;
+  @include box-sizing(border-box);
+}
+
+* {
+  &,
+  &:before,
+  &:after {
+    @include box-sizing(inherit);
+  }
+}
+
+body {
+  position: relative;
+  margin: 0;
+  height: 100%;
+  min-width: 320px;
+  background-color: $bodyBgColor;
+  color: $bodyFontColor;
+  font-family: $fontFamilyTwo;
+  font-weight: 300;
+}
+
+.wrapper {
+  position: relative;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+strong,
+b {
+  font-weight: bold;
+}
+
+.page-wrapper {
+  width: 96%;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  &.full-width {
+    width: auto;
+    max-width: none;
+  }
+}
+
+.inner-wrapper {
+  width: 96%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+img {
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  position: relative;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  @extend %clearfix;
+
+  @media only screen and (min-width: 1200px) {
+    width: 1200px;
+  }
+}
+
+.portfolio {
+  &-thumbnail {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    @include transition(.2s ease-out);
+
+    &:hover {
+      @include box-shadow(0 10px 20px rgba(#000, .2));
+    }
+  }
+}
+
+.kama_breadcrumbs {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.embed-responsive,
+.wpb_video_widget {
+  @include box-shadow(0 60px 60px -40px rgba(#000, .7));
+}
+
+.owl-carousel {
+  .owl-item {
+    overflow: hidden;
+
+    .alignleft {
+      margin: 0 30px 30px 0;
+
+      @media only screen and (max-width: 768px) {
+        display: block;
+        float: none;
+        margin: 0 auto 20px;
+      }
+    }
+
+    h3 {
+      position: relative;
+      color: #fff;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      overflow: hidden;
+      font-size: 25px;
+
+      &:after {
+        content: '';
+        display: block;
+        width: 95px;
+        height: 4px;
+        background-color: #177ec2;
+        margin-top: 10px;
+      }
+    }
+
+    p {
+      color: #fff;
+      font-size: 14px;
+      line-height: 1.3;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+  }
+
+  &.sa_owl_theme {
+    .owl-nav div {
+      width: 58px !important;
+      height: 58px !important;
+      background-color: #e1e1e1 !important;
+    }
+
+    .owl-dots .owl-dot span {
+      background-color: #fff !important;
+    }
+
+    .owl-dots .active span {
+      background-color: #a2a2a2 !important;
+    }
+  }
+}
+
+.black .owl-carousel.sa_owl_theme .owl-nav .owl-prev:hover,
+.black .owl-carousel.sa_owl_theme .owl-nav .owl-next:hover {
+  background-color: #177ec2 !important;
+}
+
+.page-name {
+  text-align: center;
+}
+
+.page-404 {
+  height: 70vh;
+  background: url(img/404.jpg) no-repeat center bottom;
+
+  //xs 544
+  @media #{$mobile} {
+    background: none;
+  }
+
+  //sm 545 - 768
+  @media #{$tablet} {
+    background: none;
+  }
+}

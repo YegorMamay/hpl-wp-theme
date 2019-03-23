@@ -1,0 +1,65 @@
+.prefooter {
+    background-color: lighten( $footerBgColor, 10% );
+    position: absolute;
+    right: 0;
+    bottom: $footerHeight;
+    width: 100%;
+    padding: 25px 0;
+    text-align: center;
+    color: white;
+    
+    h6 {
+        color: white;
+        margin-bottom: 20px;
+    }
+    
+    a {
+        color: white;
+        
+        &:hover {
+            color: #dddddd;
+        }
+    }
+    
+    hr {
+        margin-bottom: 20px;
+    }
+    
+    .social {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+        
+        a {
+            margin: 0 10px 20px 10px;
+        }
+    }
+    
+    p {
+        line-height: 30px;
+    }
+}
+
+.page-footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: $footerHeight;
+    width: 100%;
+    background-color: $footerBgColor;
+    color: $footerFontColor;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    a {
+        color: $footerFontColor;
+        text-decoration: underline;
+        
+        &:hover {
+            color: $footerLinkColorActive;
+        }
+    }
+}

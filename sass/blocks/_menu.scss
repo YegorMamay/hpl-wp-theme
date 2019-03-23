@@ -1,0 +1,114 @@
+.main-nav {
+    background-color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+
+    .menu-container {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        
+        .menu-item{
+            display: inline-block;
+            vertical-align: middle;
+            
+            a {
+                display: block;
+                padding: 15px 25px;
+                font-size: 13px;
+                text-transform: uppercase;
+                color: $menuFontColor;
+                background-color: $menuBgColor;
+                @include smooth_animation;
+
+                
+                &:hover {
+                    background-color: $menuBgColorActive;
+                    color: $menuFontColorActive;
+                }
+            } 
+        }
+
+        .current-menu-item {
+            position: relative;
+
+            > a {
+                background-color: $menuBgColorActive;
+                color: $menuFontColorActive;
+            }
+        }
+        
+        .menu-item-has-children {
+            position: relative;
+
+            > a {
+                position: relative;
+                padding-right: 30px;
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    right: 15px;
+                    margin: auto;
+                    width: 0;
+                    height: 0;
+                    border: 4px solid transparent;
+                    border-bottom: 0;
+                    border-top: 6px solid #fff;
+                }
+            }
+            
+            .sub-menu {
+                background-color: $menuBgColor;
+                list-style: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                z-index: 33;
+                display: none;
+                
+                .menu-item {
+
+                    a{
+                        display: block;
+                        padding: 10px 20px;
+                        min-width: 200px;
+                        text-align: left;
+                        @include smooth_animation;
+                    }
+                    
+                    .sub-menu {
+                        position: absolute;
+                        top: 0;
+                        left: 100%;
+                        z-index: 33;
+                        display: none;
+                    }
+                    
+                    &:hover .sub-menu{
+                        display: block;
+                    }
+                }
+            }
+            
+            &:hover .sub-menu {
+                display: block;
+            }
+        }
+    }
+}
+
+
+//xs 544
+@media #{$mobile} {
+    nav.main-nav {
+        display: none;
+        ul.menu-container {
+            display: block;
+        }
+    }
+}
