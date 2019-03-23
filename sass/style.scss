@@ -1,6 +1,6 @@
 /*
 Theme Name: HPL-v1.1
-Theme URI:
+Theme URI: https://github.com/YegorMamay/hpl-wp-theme
 Text Domain: brainworks
 Author: Yegor Mamay
 Author URI: http://brainworks.com.ua
@@ -54,6 +54,7 @@ Tags: one-column, two-columns, full-width-template, e-commerce
 @import "blocks/menu";
 @import "blocks/sidebar";
 @import "blocks/menu-second";
+@import "blocks/fornt-carousel";
 
 html {
   height: 100%;
